@@ -1,0 +1,695 @@
+{
+  "info": {
+    "name": "Medical Imaging System API",
+    "description": "Complete API collection for the Medical Imaging Backend System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root & Health",
+      "item": [
+        {
+          "name": "API Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "API Health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "health"]
+            }
+          }
+        },
+        {
+          "name": "System Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/stats",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "stats"]
+            }
+          }
+        },
+        {
+          "name": "Dashboard Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/dashboard",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "dashboard"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpass123\",\n  \"email\": \"test@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medical Staff - Radiologists",
+      "item": [
+        {
+          "name": "List Radiologists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/radiologists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "radiologists"]
+            }
+          }
+        },
+        {
+          "name": "Create Radiologist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"email\": \"john.smith@hospital.com\",\n  \"phone\": \"+1-555-0101\",\n  \"licenseNumber\": \"RAD123456\",\n  \"department\": \"Radiology\",\n  \"specialty\": \"Diagnostic Radiology\",\n  \"subspecialty\": \"Neuroradiology\",\n  \"boardCertification\": \"ABR Certified\",\n  \"fellowshipTraining\": \"Neuroradiology Fellowship\",\n  \"yearsExperience\": 15,\n  \"academicTitle\": \"Associate Professor\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/radiologists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "radiologists"]
+            }
+          }
+        },
+        {
+          "name": "Get Radiologist by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/radiologists/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "radiologists", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Radiologist",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"email\": \"john.smith@hospital.com\",\n  \"phone\": \"+1-555-0101\",\n  \"department\": \"Radiology\",\n  \"specialty\": \"Interventional Radiology\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/radiologists/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "radiologists", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Radiologist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/radiologists/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "radiologists", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medical Staff - Referring Doctors",
+      "item": [
+        {
+          "name": "List Referring Doctors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/referring-doctors",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "referring-doctors"]
+            }
+          }
+        },
+        {
+          "name": "Create Referring Doctor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Sarah\",\n  \"lastName\": \"Johnson\",\n  \"email\": \"sarah.johnson@clinic.com\",\n  \"phone\": \"+1-555-0202\",\n  \"medicalLicense\": \"MD789012\",\n  \"department\": \"Internal Medicine\",\n  \"specialty\": \"Cardiology\",\n  \"practiceName\": \"Johnson Cardiology Clinic\",\n  \"npiNumber\": \"1234567890\",\n  \"deaNumber\": \"FJ1234567\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/referring-doctors",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "referring-doctors"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medical Staff - Imaging Technicians",
+      "item": [
+        {
+          "name": "List Imaging Technicians",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/imaging-technicians",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "imaging-technicians"]
+            }
+          }
+        },
+        {
+          "name": "Create Imaging Technician",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Mike\",\n  \"lastName\": \"Davis\",\n  \"email\": \"mike.davis@hospital.com\",\n  \"phone\": \"+1-555-0303\",\n  \"certificationNumber\": \"TECH456789\",\n  \"department\": \"Radiology\",\n  \"certificationType\": \"ARRT\",\n  \"modalities\": [\"CT\", \"MRI\", \"X-Ray\"],\n  \"certificationExpiry\": \"2026-12-31\",\n  \"advancedCertifications\": [\"CT Certified\", \"MRI Certified\"],\n  \"shiftSchedule\": \"Day Shift\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/imaging-technicians",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "imaging-technicians"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Medical Staff - Combined",
+      "item": [
+        {
+          "name": "List All Medical Staff",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "all"]
+            }
+          }
+        },
+        {
+          "name": "Search Medical Staff",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/medical-staff/search?q=john&type=radiologist",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "medical-staff", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "john"
+                },
+                {
+                  "key": "type",
+                  "value": "radiologist"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Patients (MWL)",
+      "item": [
+        {
+          "name": "List Patients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/mwl/patients",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["mwl", "patients"]
+            }
+          }
+        },
+        {
+          "name": "Create Patient",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patient_id\": \"PAT001\",\n  \"name\": \"Jane Doe\",\n  \"birth_date\": \"1985-06-15\",\n  \"sex\": \"F\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/mwl/patients",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["mwl", "patients"]
+            }
+          }
+        },
+        {
+          "name": "Get Patient by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/mwl/patients/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["mwl", "patients", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Worklists",
+      "item": [
+        {
+          "name": "List Worklists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/mwl/worklists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["mwl", "worklists"]
+            }
+          }
+        },
+        {
+          "name": "Create Worklist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accession_number\": \"ACC001\",\n  \"patient_id\": \"PAT001\",\n  \"modality\": \"CT\",\n  \"description\": \"CT Chest\",\n  \"priority\": \"routine\",\n  \"referring_physician\": \"Dr. Johnson\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/mwl/worklists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["mwl", "worklists"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Professional API - Doctors",
+      "item": [
+        {
+          "name": "List Doctors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/doctors",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors"]
+            }
+          }
+        },
+        {
+          "name": "Create Doctor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Dr. Emily\",\n  \"lastName\": \"Chen\",\n  \"specialty\": \"Radiology\",\n  \"licenseNumber\": \"DOC123456\",\n  \"email\": \"emily.chen@hospital.com\",\n  \"phone\": \"+1-555-0404\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/doctors",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Professional API - Patients",
+      "item": [
+        {
+          "name": "List Patients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/patients",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "patients"]
+            }
+          }
+        },
+        {
+          "name": "Create Patient",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Brown\",\n  \"dateOfBirth\": \"1990-03-20\",\n  \"gender\": \"F\",\n  \"phone\": \"+1-555-0505\",\n  \"email\": \"alice.brown@email.com\",\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Anytown\",\n    \"postalCode\": \"12345\",\n    \"country\": \"USA\"\n  },\n  \"medicalRecordNumber\": \"MRN001\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/patients",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "patients"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Professional API - Studies",
+      "item": [
+        {
+          "name": "List Studies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/studies",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "studies"]
+            }
+          }
+        },
+        {
+          "name": "Create Study",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"1\",\n  \"doctorId\": \"1\",\n  \"studyDate\": \"2024-01-15T10:00:00Z\",\n  \"modality\": \"MRI\",\n  \"bodyPart\": \"Brain\",\n  \"status\": \"completed\",\n  \"clinicalIndication\": \"Headache evaluation\",\n  \"report\": {\n    \"status\": \"finalized\",\n    \"summary\": \"Normal brain MRI\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/studies",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "studies"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "DICOM Processing",
+      "item": [
+        {
+          "name": "List DICOM Studies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/dicom/studies",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["dicom", "studies"]
+            }
+          }
+        },
+        {
+          "name": "Upload DICOM File",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "patient_id",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/dicom/upload",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["dicom", "upload"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "item": [
+        {
+          "name": "List Modalities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/settings/modalities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["settings", "modalities"]
+            }
+          }
+        },
+        {
+          "name": "List Presets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/settings/presets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["settings", "presets"]
+            }
+          }
+        },
+        {
+          "name": "Create Preset",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"modality\": \"CT\",\n  \"name\": \"Brain Window\",\n  \"windowCenter\": 40,\n  \"windowWidth\": 80,\n  \"description\": \"Standard brain window settings\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/settings/presets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["settings", "presets"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ]
+}
