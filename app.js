@@ -63,8 +63,14 @@ const startServer = async () => {
       console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
     });
   } catch (error) {
-    console.error('❌ Failed to start server:', error.message);
-    process.exit(1);
+    console.error('⚠️  Database connection failed:', error.message);
+    console.log('📡 Starting server without database - read-only mode');
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log(`🚀 Medical Imaging API running on port ${PORT}`);
+      console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
+      console.log(`⚠️  Database is not available - API endpoints requiring DB will fail`);
+    });
   }
 };
 
