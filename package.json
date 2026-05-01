@@ -2,10 +2,10 @@
   "name": "medical-imaging-backend",
   "version": "1.0.0",
   "description": "Professional Medical Imaging API Backend",
-  "main": "app.js",
+  "main": "api/routes/medical_db_backend.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node api/routes/medical_db_backend.js",
+    "dev": "nodemon api/routes/medical_db_backend.js",
     "test": "jest"
   },
   "dependencies": {

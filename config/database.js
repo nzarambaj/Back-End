@@ -1,8 +1,10 @@
 // PostgreSQL Database Configuration
+const { Sequelize } = require('sequelize');
 const { config } = require('dotenv');
 config();
 
-module.exports = {
+// Database configuration
+const dbConfig = {
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
   database: process.env.DB_NAME || 'medical_imaging',
@@ -28,4 +30,24 @@ module.exports = {
       rejectUnauthorized: false
     } : false
   }
+};
+
+// Create Sequelize instance
+const sequelize = new Sequelize(
+  dbConfig.database,
+  dbConfig.username,
+  dbConfig.password,
+  {
+    host: dbConfig.host,
+    port: dbConfig.port,
+    dialect: dbConfig.dialect,
+    pool: dbConfig.pool,
+    logging: dbConfig.logging,
+    dialectOptions: dbConfig.dialectOptions
+  }
+);
+
+module.exports = {
+  sequelize,
+  dbConfig
 };
