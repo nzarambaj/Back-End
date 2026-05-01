@@ -44,9 +44,10 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Database
-*.db
-*.sqlite3
+# Database - TRACK ALL DATABASE FILES
+# PostgreSQL databases should be tracked
+# SQLite databases should be tracked
+# Remove exclusions to allow version control of database schemas and data
 
 # Logs
 *.log
