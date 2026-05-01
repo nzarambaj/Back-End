@@ -7,38 +7,38 @@ Project_BackEnd has many scattered files and some basic organization. Need to or
 
 ```
 Project_BackEnd/
-├── 01_api/                       # API Layer - Core backend API
+├── api/                           # API Layer - Core backend API
 │   ├── routes/                    # API routes and controllers
 │   ├── middleware/                # Custom middleware
 │   ├── models/                    # Data models
 │   └── config/                    # API configuration
-├── 02_services/                  # Business Logic Layer
+├── services/                      # Business Logic Layer
 │   ├── auth/                      # Authentication services
 │   ├── database/                  # Database services
 │   ├── medical/                   # Medical imaging services
 │   └── integration/              # External integrations
-├── 03_utils/                     # Utilities Layer
+├── utils/                         # Utilities Layer
 │   ├── validators/                # Data validation
 │   ├── helpers/                   # Helper functions
-│   ├── formatters/                # Response formatting
-│   └── constants/                 # Constants and enums
-└── 04_deployment/                # Deployment Layer
+│   ├── formatters/                # Data formatting
+│   └── constants/                 # Application constants
+└── deployment/                    # Deployment Layer
     ├── scripts/                   # Deployment scripts
-    ├── config/                    # Environment configs
+    ├── config/                    # Deployment configuration
     ├── docs/                      # Documentation
-    └── tools/                     # Deployment tools
+    └── tools/                     # Development tools
 ```
 
 ## Key Files to Organize
-- medical_db_backend.js → 01_api/routes/
-- package.json → 01_api/config/
-- requirements.txt → 04_deployment/config/
-- All test files → 04_deployment/scripts/
-- Database setup files → 02_services/database/
-- Authentication files → 02_services/auth/
+- medical_db_backend.js → api/routes/
+- package.json → api/config/
+- requirements.txt → deployment/config/
+- All test files → deployment/scripts/
+- Database setup files → services/database/
+- Authentication files → services/auth/
 
 ## Migration Strategy
-1. Create 4 main folders with numbered prefixes
+1. Create 4 main folders with simple names
 2. Create sub-folders inside each main folder
 3. Move existing files to appropriate locations
 4. Update import paths and configurations
