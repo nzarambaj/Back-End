@@ -14,11 +14,11 @@ services:
       - key: DB_PORT
         value: 5432
       - key: DB_NAME
-        value: imagingdb
+        value: medical_db
       - key: DB_USER
         value: postgres
       - key: DB_PASSWORD
-        value: your_postgresql_password
+        value: Sibo25Mana
       - key: JWT_SECRET
         value: your_super_secret_jwt_key_here_change_in_production
       - key: FRONTEND_URL

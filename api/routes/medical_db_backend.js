@@ -19,6 +19,12 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Import calculus routes
+const calculusRoutes = require('./calculations.routes');
+
+// Use calculus routes
+app.use('/api', calculusRoutes);
+
 // Root endpoint
 app.get('/', (req, res) => {
     res.json({
@@ -33,21 +39,26 @@ app.get('/', (req, res) => {
             protected_doctors: '/api/doctors',
             protected_patients: '/api/patients',
             protected_studies: '/api/studies',
-            review: '/api/review'
+            review: '/api/review',
+            calculus_calculate: '/api/calculate',
+            calculus_results: '/api/results'
         },
         architecture: 'Frontend (3000) -> Backend (5000) -> medical_db (5432) -> Flask API (5001)',
+        calculus_integration: 'Calculus endpoints integrated',
         timestamp: new Date().toISOString()
     });
 });
 
 // Database configuration for medical_db
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'medical_db',
-  password: 'Sibo25Mana',
-  port: 5432,
-  ssl: false,
+  user: process.env.DB_USER || 'postgres',
+  host: process.env.DB_HOST || 'localhost',
+  database: process.env.DB_NAME || 'medical_db',
+  password: process.env.DB_PASSWORD || 'Sibo25Mana',
+  port: parseInt(process.env.DB_PORT) || 5432,
+  ssl: process.env.NODE_ENV === 'production' ? {
+    rejectUnauthorized: false
+  } : false,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
