@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { calculate, getResults } = require('../controllers/calculations.controller');
+const { calculate, getResults } = require('./calculations.controller');
 
 // POST /api/calculate - Perform Calculus computations
 router.post('/calculate', calculate);
