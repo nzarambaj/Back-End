@@ -60,8 +60,8 @@ const pool = new Pool({
   max: 25,  // Increased for PostgreSQL 18
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
-  // PostgreSQL 18 specific optimizations
-  options: '-c default_transaction_isolation=read_committed -c statement_timeout=30s'
+  // Fixed PostgreSQL 18 configuration - removed invalid options
+  options: '-c statement_timeout=30s'
 });
 
 // Flask API configuration
