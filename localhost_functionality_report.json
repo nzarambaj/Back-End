@@ -3,7 +3,7 @@
   "project": "Project_BackEnd",
   "timestamp": "1777628924.2358136",
   "server_status": {
-    "running": true,
+    "running": false,
     "url": "http://localhost:5000"
   },
   "endpoint_tests": {
@@ -12,7 +12,7 @@
     "success_rate": "Partial"
   },
   "structure_verification": {
-    "optimized": true,
+    "optimized": false,
     "file_count": 119,
     "reduction": 32,
     "reduction_percentage": "21.2%"

@@ -10,13 +10,11 @@ const axios = require('axios');
 const app = express();
 const PORT = 5000;
 
+// Import CORS configuration
+const corsConfig = require('../config/cors-config');
+
 // Middleware
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors(corsConfig));
 app.use(express.json());
 
 // Import calculus routes
@@ -49,19 +47,21 @@ app.get('/', (req, res) => {
     });
 });
 
-// Database configuration for medical_db
+// Database configuration for medical_db (PostgreSQL 18 optimized)
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'localhost',
   database: process.env.DB_NAME || 'medical_db',
-  password: process.env.DB_PASSWORD || 'Sibo25Mana',
+  password: process.env.DB_PASSWORD || 'Sibo25mana',
   port: parseInt(process.env.DB_PORT) || 5432,
   ssl: process.env.NODE_ENV === 'production' ? {
     rejectUnauthorized: false
   } : false,
-  max: 20,
+  max: 25,  // Increased for PostgreSQL 18
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
+  // PostgreSQL 18 specific optimizations
+  options: '-c default_transaction_isolation=read_committed -c statement_timeout=30s'
 });
 
 // Flask API configuration

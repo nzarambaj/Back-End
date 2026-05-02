@@ -18,8 +18,10 @@ services:
       - key: DB_USER
         value: postgres
       - key: DB_PASSWORD
-        value: Sibo25Mana
+        value: Sibo25mana
       - key: JWT_SECRET
         value: your_super_secret_jwt_key_here_change_in_production
       - key: FRONTEND_URL
         value: https://your-app-name.onrender.com
+      - key: ALLOWED_ORIGINS
+        value: https://*.vercel.app,https://*.onrender.com,http://localhost:3000

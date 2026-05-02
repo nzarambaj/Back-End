@@ -5,7 +5,7 @@ async function testConnection() {
     user: 'postgres',
     host: 'localhost',
     database: 'medical_imaging',
-    password: 'Sibo25Mana',
+    password: 'Sibo25mana',
     port: 5432,
     ssl: false
   });
